@@ -25,7 +25,7 @@ public_users.get('/', async function (req, res) {
   try {
       // Fetch all books
       const response = await getBooks();
-      res.send(response);
+      res.send({"books":response});
   } catch (error) {
       console.error('Error fetching books:', error.message);
       res.status(500).json({ message: 'Failed to fetch books' });
